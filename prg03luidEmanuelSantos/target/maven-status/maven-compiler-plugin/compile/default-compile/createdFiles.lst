@@ -1,1 +1,3 @@
-br\com\ifba\login\view\Tela.class
+br\com\ifba\login\view\TelaDeLogin$1.class
+br\com\ifba\login\view\TelaDeCadastro.class
+br\com\ifba\login\view\TelaDeLogin.class
