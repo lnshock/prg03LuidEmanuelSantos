@@ -4,6 +4,7 @@
  */
 package br.com.ifba.login.view;
 import javax.swing.JOptionPane;
+import br.com.ifba.usuario.validar.ValidarUsuario;
 
 /**
  *
@@ -209,17 +210,27 @@ public class TelaDeCadastro extends javax.swing.JFrame {
            //Verificando se há campos vazios e mostrnado mensagem de erro, caso haja campos vazios    
          }
          else{ 
-          if (!senha.equals(confirmarSenha)){
+             //Verifica se a palavra no campo login é uma das palavras proibidas
+           if (ValidarUsuario.contemPalavraProibida(login)){
+                //Mostra uma mensagem de erro se for uma palavra proibida
+                  JOptionPane.showMessageDialog(null, "Login contem palavra nao permitida", "Erro",
+                  JOptionPane.ERROR_MESSAGE);
+           }
+           else{ 
+               if (!senha.equals(confirmarSenha)){
              JOptionPane.showMessageDialog(null, "As senha nao coincidem", "Erro",
              JOptionPane.ERROR_MESSAGE); 
              //Verificando se as senhas informadas são iguais se não imprime a mensagem de erro
           }
-           else{
-             JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-                dispose();
-             //Se as senhas forem iguais, uma mensagem de confirmação e mostrada e a tela é fechada    
-            }
+                else{
+                  JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                     dispose();
+                    //Se as senhas forem iguais, uma mensagem de confirmação e mostrada e a tela é fechada    
+               }
            }
+         }
+          
+            
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     /**
