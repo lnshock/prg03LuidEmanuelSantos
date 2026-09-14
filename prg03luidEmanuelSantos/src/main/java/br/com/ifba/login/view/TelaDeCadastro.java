@@ -4,6 +4,9 @@
  */
 package br.com.ifba.login.view;
 import javax.swing.JOptionPane;
+import br.com.ifba.usuario.entity.Usuario;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -197,7 +200,9 @@ public class TelaDeCadastro extends javax.swing.JFrame {
         String genero = txtGenero.getText();
         String email = txtEmail.getText();
         String cpf = txtCpf.getText();
-        String dataNascimento = spnDataDeNascimento.toString();
+        Date data = (Date)spnDataDeNascimento.getValue();
+        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+        String dataNascimento = formatador.format(data);
         String senha = txtSenha.getText();
         String confirmarSenha = txtConfirmaSenha.getText();
         //Pegando todas os dados informados na tela de cadastro
@@ -215,9 +220,23 @@ public class TelaDeCadastro extends javax.swing.JFrame {
              //Verificando se as senhas informadas são iguais se não imprime a mensagem de erro
           }
            else{
-             JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-                dispose();
-             //Se as senhas forem iguais, uma mensagem de confirmação e mostrada e a tela é fechada    
+              //instanciando objeto do tipo Usuario 
+               Usuario usuario = new Usuario();
+               //Salvando as informacoes do usuario
+                usuario.setNome(nome);
+                usuario.setTelefone(telefone);
+                usuario.setLogin(login);
+                usuario.setGenero(genero);
+                usuario.setEmail(email);
+                usuario.setCpf(cpf);
+                usuario.setDataNascimento(dataNascimento);
+                usuario.setSenha(senha);
+                /*Se as senhas forem iguais, uma mensagem de confirmação e mostrada,
+                os dados sao salvos e a tela é fechada*/
+              JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+               dispose();
+             
+              
             }
            }
     }//GEN-LAST:event_btnCadastrarActionPerformed
