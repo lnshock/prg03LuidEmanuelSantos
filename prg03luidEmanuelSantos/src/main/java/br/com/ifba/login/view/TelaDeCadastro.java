@@ -6,6 +6,8 @@ package br.com.ifba.login.view;
 import javax.swing.JOptionPane;
 import br.com.ifba.usuario.validar.ValidarUsuario;
 import br.com.ifba.usuario.entity.Usuario;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -87,7 +89,8 @@ public class TelaDeCadastro extends javax.swing.JFrame {
         btnCadastrar.setText("Cadastrar");
         btnCadastrar.addActionListener(this::btnCadastrarActionPerformed);
 
-        spnDataDeNascimento.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(1788655206343L), new java.util.Date(-2208901676000L), new java.util.Date(), java.util.Calendar.DAY_OF_MONTH));
+        spnDataDeNascimento.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(1789435329961L), null, new java.util.Date(1789435329961L), java.util.Calendar.DAY_OF_MONTH));
+        spnDataDeNascimento.setEditor(new javax.swing.JSpinner.DateEditor(spnDataDeNascimento, "dd/MM/yyyy"));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,7 +120,7 @@ public class TelaDeCadastro extends javax.swing.JFrame {
                             .addComponent(txtLogin)
                             .addComponent(txtConfirmaSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
                             .addComponent(txtSenha)
-                            .addComponent(spnDataDeNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(spnDataDeNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -228,7 +231,13 @@ public class TelaDeCadastro extends javax.swing.JFrame {
                   Usuario usuario = new Usuario(); 
                   //Coleta as informações dadas na tela de cadastro
                    usuario.setCpf(cpf);
-                   usuario.setDataNascimento(dataNascimento);
+                   //pegando data de nascimento
+                   Date dataSelecionada = (Date) spnDataDeNascimento.getValue();  
+                   //Definindo o formato para pegar so dia, mês e ano
+                   SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+                   //Convertendo data para String
+                   String dataEmTexto = formatador.format(dataSelecionada);
+                   usuario.setDataNascimento(dataEmTexto);
                    usuario.setEmail(email);
                    usuario.setGenero(genero);
                    usuario.setLogin(login);
@@ -237,7 +246,16 @@ public class TelaDeCadastro extends javax.swing.JFrame {
                    usuario.setTelefone(telefone);
                   JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
                      dispose();
-                    //Se as senhas forem iguais, uma mensagem de confirmação e mostrada e a tela é fechada    
+                    //Se as senhas forem iguais, uma mensagem de confirmação e mostrada e a tela é fechada   
+                    
+                   System.out.println(usuario.getCpf());
+                   System.out.println(usuario.getDataNascimento());
+                   System.out.println(usuario.getEmail());
+                   System.out.println(usuario.getGenero());
+                   System.out.println(usuario.getLogin());
+                   System.out.println(usuario.getNome());
+                   System.out.println(usuario.getSenha());
+                   System.out.println(usuario.getTelefone());
                }
            }
          }
