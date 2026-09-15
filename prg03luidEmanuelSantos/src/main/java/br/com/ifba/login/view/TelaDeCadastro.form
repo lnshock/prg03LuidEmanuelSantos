@@ -48,7 +48,7 @@
                           <Component id="txtLogin" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtConfirmaSenha" alignment="0" pref="242" max="32767" attributes="0"/>
                           <Component id="txtSenha" alignment="0" max="32767" attributes="0"/>
-                          <Component id="spnDataDeNascimento" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="spnDataDeNascimento" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -220,7 +220,10 @@
     <Component class="javax.swing.JSpinner" name="spnDataDeNascimento">
       <Properties>
         <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-          <SpinnerModel initial="1788655206343" maximum="now" minimum="-2208901676000" stepSize="5" type="date"/>
+          <SpinnerModel initial="1789435329961" maximum="1789435329961" stepSize="5" type="date"/>
+        </Property>
+        <Property name="editor" type="javax.swing.JComponent" editor="org.netbeans.modules.form.editors.SpinnerEditorEditor">
+          <SpinnerEditor format="dd/MM/yyyy" type="1"/>
         </Property>
       </Properties>
     </Component>
