@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package br.com.ifba.login.view;
+import br.com.ifba.usuario.entity.Usuario;
 
 /**
  *
@@ -149,9 +150,11 @@ public class TelaDeLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        String login = txtLogin.getText(); //Pegando oque foi digitado no txtLogin
-        String senha = new String(txtSenha.getPassword());//Pegando oque foi digitado no txtSenha
-        lblInformacoes.setText("<html>Login: " + login + "<br>Senha: " + senha + "</html>");/*Mudando oque esta
+      Usuario usuario = new Usuario();  
+        usuario.setLogin(txtLogin.getText());  //Pegando oque foi digitado no txtLogin
+        usuario.setSenha(new String (txtSenha.getPassword()));//Pegando oque foi digitado no txtSenha
+        lblInformacoes.setText("<html>Login: " + usuario.getLogin() + "<br>Senha: " + 
+        usuario.getSenha()+ "</html>");/*Mudando oque esta
         escrito no lblInformacoes e exibindo a senha e o login informados*/
     }//GEN-LAST:event_btnEntrarActionPerformed
 

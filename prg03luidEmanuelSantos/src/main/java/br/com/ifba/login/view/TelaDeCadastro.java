@@ -5,6 +5,7 @@
 package br.com.ifba.login.view;
 import javax.swing.JOptionPane;
 import br.com.ifba.usuario.validar.ValidarUsuario;
+import br.com.ifba.usuario.entity.Usuario;
 
 /**
  *
@@ -223,6 +224,17 @@ public class TelaDeCadastro extends javax.swing.JFrame {
              //Verificando se as senhas informadas são iguais se não imprime a mensagem de erro
           }
                 else{
+                  //Instacia um objeto do tipo Usuario 
+                  Usuario usuario = new Usuario(); 
+                  //Coleta as informações dadas na tela de cadastro
+                   usuario.setCpf(cpf);
+                   usuario.setDataNascimento(dataNascimento);
+                   usuario.setEmail(email);
+                   usuario.setGenero(genero);
+                   usuario.setLogin(login);
+                   usuario.setNome(nome);
+                   usuario.setSenha(senha);
+                   usuario.setTelefone(telefone);
                   JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
                      dispose();
                     //Se as senhas forem iguais, uma mensagem de confirmação e mostrada e a tela é fechada    
