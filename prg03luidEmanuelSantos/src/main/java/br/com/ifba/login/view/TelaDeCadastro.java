@@ -227,8 +227,8 @@ public class TelaDeCadastro extends javax.swing.JFrame {
              //Verificando se as senhas informadas são iguais se não imprime a mensagem de erro
           }
                 else{
-                  //Instacia um objeto do tipo Usuario 
-                  Usuario usuario = new Usuario(); 
+                  //Instacia um objeto do tipo Usuario com parametros para o construtor 
+                  Usuario usuario = new Usuario(nome,cpf,login,senha); 
                   //Coleta as informações dadas na tela de cadastro
                    usuario.setCpf(cpf);
                    //pegando data de nascimento
@@ -244,7 +244,8 @@ public class TelaDeCadastro extends javax.swing.JFrame {
                    usuario.setNome(nome);
                    usuario.setSenha(senha);
                    usuario.setTelefone(telefone);
-                  JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                  JOptionPane.showMessageDialog(null, "Nome:" + usuario.getNome() + " cpf: "+ usuario.getCpf()+ 
+                  " Login: "+ usuario.getLogin() + " Senha: " + usuario.getSenha(),"Sucesso", JOptionPane.INFORMATION_MESSAGE);
                      dispose();
                     //Se as senhas forem iguais, uma mensagem de confirmação e mostrada e a tela é fechada   
                     
