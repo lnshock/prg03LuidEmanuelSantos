@@ -9,6 +9,7 @@ package br.com.ifba.usuario.entity;
  * @author luids
  */
 public class Usuario {
+      
     private String nome;
     private String cpf;
     private String genero;
@@ -17,8 +18,20 @@ public class Usuario {
     private String email;
     private String login;
     private String senha;
+
+    //Construtor sem parametros
+    public Usuario() {
+    }
+    //Construtor com parametros
+    public Usuario(String nome, String cpf, String login, String senha) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.login = login;
+        this.senha = senha;
+    }
     
-    //Metodos acessores
+    
+    //Metodos acessores getters e setters
     public String getNome() {
         return nome;
     }
