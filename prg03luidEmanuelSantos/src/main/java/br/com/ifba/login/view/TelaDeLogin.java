@@ -4,6 +4,7 @@
  */
 package br.com.ifba.login.view;
 import br.com.ifba.usuario.entity.Usuario;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -150,12 +151,22 @@ public class TelaDeLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-      Usuario usuario = new Usuario();  
-        usuario.setLogin(txtLogin.getText());  //Pegando oque foi digitado no txtLogin
-        usuario.setSenha(new String (txtSenha.getPassword()));//Pegando oque foi digitado no txtSenha
-        lblInformacoes.setText("<html>Login: " + usuario.getLogin() + "<br>Senha: " + 
-        usuario.getSenha()+ "</html>");/*Mudando oque esta
-        escrito no lblInformacoes e exibindo a senha e o login informados*/
+      Usuario usuario = new Usuario();
+      //Criando login e senha de exemplo
+      usuario.setLogin("Luid"); 
+      usuario.setSenha("senha123");
+      String loginDigitado = txtLogin.getText();
+      String senhaDigitada = new String(txtSenha.getPassword());
+        
+        //Compara se a senha e login digitados são compativeis com os exemplos
+        if (usuario.autenticar(loginDigitado, senhaDigitada)){
+         //se forem iguais, mensagem de sucesso   
+            JOptionPane.showMessageDialog(null, "Acesso liberado", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+         //caso forem diferentes, mensagem de erro   
+            JOptionPane.showMessageDialog(null, "Acesso negado", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void lblCadastreseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCadastreseMouseClicked

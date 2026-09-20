@@ -248,15 +248,6 @@ public class TelaDeCadastro extends javax.swing.JFrame {
                   " Login: "+ usuario.getLogin() + " Senha: " + usuario.getSenha(),"Sucesso", JOptionPane.INFORMATION_MESSAGE);
                      dispose();
                     //Se as senhas forem iguais, uma mensagem de confirmação e mostrada e a tela é fechada   
-                    
-                   System.out.println(usuario.getCpf());
-                   System.out.println(usuario.getDataNascimento());
-                   System.out.println(usuario.getEmail());
-                   System.out.println(usuario.getGenero());
-                   System.out.println(usuario.getLogin());
-                   System.out.println(usuario.getNome());
-                   System.out.println(usuario.getSenha());
-                   System.out.println(usuario.getTelefone());
                }
            }
          }
