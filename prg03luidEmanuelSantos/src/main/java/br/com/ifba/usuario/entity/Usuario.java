@@ -4,11 +4,13 @@
  */
 package br.com.ifba.usuario.entity;
 
+import br.com.ifba.usuario.interfaces.Autenticavel;
+
 /**
  *
  * @author luids
  */
-public class Usuario {
+public class Usuario implements Autenticavel{
       
     private String nome;
     private String cpf;
@@ -18,6 +20,7 @@ public class Usuario {
     private String email;
     private String login;
     private String senha;
+    
 
     //Construtor sem parametros
     public Usuario() {
@@ -30,6 +33,16 @@ public class Usuario {
         this.senha = senha;
     }
     
+        @Override
+    public boolean autenticar(String login, String senha) {
+        
+       if(this.login.equals(login) && this.senha.equals(senha)){
+           return true;
+       }
+       else{
+           return false;
+       }
+    }
     
     //Metodos acessores getters e setters
     public String getNome() {
@@ -95,5 +108,7 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+
     
 }
