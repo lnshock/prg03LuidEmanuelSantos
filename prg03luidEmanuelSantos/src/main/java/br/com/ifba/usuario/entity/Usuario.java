@@ -4,6 +4,7 @@
  */
 package br.com.ifba.usuario.entity;
 
+
 import br.com.ifba.usuario.interfaces.Autenticavel;
 
 /**
@@ -34,6 +35,7 @@ public class Usuario implements Autenticavel{
     }
     
         @Override
+        
     public boolean autenticar(String login, String senha) {
         
        if(this.login.equals(login) && this.senha.equals(senha)){

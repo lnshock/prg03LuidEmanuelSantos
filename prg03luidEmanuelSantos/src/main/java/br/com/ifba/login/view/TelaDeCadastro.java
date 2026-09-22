@@ -206,24 +206,32 @@ public class TelaDeCadastro extends javax.swing.JFrame {
         String senha = txtSenha.getText();
         String confirmarSenha = txtConfirmaSenha.getText();
         //Pegando todas os dados informados na tela de cadastro
+        ValidarUsuario.cpfComLetra(cpf);//Verificando se há letra no cpf informado      
+        ValidarUsuario.senhaNumCaracteres(senha);//Verificando se o num de caracteres é maior que 8
         
-         if(nome.trim().isEmpty()||telefone.trim().isEmpty()||login.trim().isEmpty()||
-         genero.trim().isEmpty()||email.trim().isEmpty()||cpf.trim().isEmpty()||
-         dataNascimento.trim().isEmpty()||senha.trim().isEmpty()||confirmarSenha.trim().isEmpty()){
+         if(ValidarUsuario.campoVazio(nome, telefone, login, genero, email, cpf, dataNascimento, senha, confirmarSenha)){
              JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Campos vazios", JOptionPane.ERROR_MESSAGE);
            //Verificando se há campos vazios e mostrnado mensagem de erro, caso haja campos vazios    
-         }
-         else{ 
+          } else{
+             if (ValidarUsuario.cpfComLetra(cpf)){
+             JOptionPane.showMessageDialog(null, "Cpf deve conter apenas números", "Erro", JOptionPane.ERROR_MESSAGE);
+             }
+             else{
+              if (ValidarUsuario.senhaNumCaracteres(senha)){
+              JOptionPane.showMessageDialog(null, "A senha deve conter no minimo 8 caracteres", "Erro", JOptionPane.ERROR_MESSAGE);
+              } 
+               else{
              //Verifica se a palavra no campo login é uma das palavras proibidas
            if (ValidarUsuario.contemPalavraProibida(login)){
                 //Mostra uma mensagem de erro se for uma palavra proibida
                   JOptionPane.showMessageDialog(null, "Login contem palavra nao permitida", "Erro",
                   JOptionPane.ERROR_MESSAGE);
            }
-           else{ 
+           else{
+              
                if (!senha.equals(confirmarSenha)){
-             JOptionPane.showMessageDialog(null, "As senha nao coincidem", "Erro",
-             JOptionPane.ERROR_MESSAGE); 
+                 JOptionPane.showMessageDialog(null, "As senha nao coincidem", "Erro",
+                 JOptionPane.ERROR_MESSAGE); 
              //Verificando se as senhas informadas são iguais se não imprime a mensagem de erro
           }
                 else{
@@ -251,6 +259,10 @@ public class TelaDeCadastro extends javax.swing.JFrame {
                }
            }
          }
+             }
+            }
+         
+        
           
             
     }//GEN-LAST:event_btnCadastrarActionPerformed
