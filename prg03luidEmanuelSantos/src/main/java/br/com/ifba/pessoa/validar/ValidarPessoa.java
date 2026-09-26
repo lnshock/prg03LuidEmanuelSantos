@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.com.ifba.usuario.validar;
-
+package br.com.ifba.pessoa.validar;
+import br.com.ifba.pessoa.entity.GeneroPessoa;
 
 /**
  *
  * @author luids
  */
-public class ValidarCliente {
+public class ValidarPessoa {
    
     public static boolean contemPalavraProibida(String texto){
        //Cria o array com as palavras proibidas
@@ -26,11 +26,11 @@ public class ValidarCliente {
          //Return false se as palavras forem diferentes
           return false;
     }
-    public static boolean campoVazio(String nome, String telefone, String login, String genero, String email, String cpf,
+    public static boolean campoVazio(String nome, String telefone, String login, GeneroPessoa genero, String email, String cpf,
             String dataNascimento, String senha, String confirmarSenha) {
            
         if (nome.trim().isEmpty() || telefone.trim().isEmpty() || login.trim().isEmpty() ||
-            genero.trim().isEmpty() || email.trim().isEmpty() || cpf.trim().isEmpty() ||
+             email.trim().isEmpty() || cpf.trim().isEmpty() ||
             dataNascimento.trim().isEmpty() || senha.trim().isEmpty() || confirmarSenha.trim().isEmpty()) {
             
             return true;

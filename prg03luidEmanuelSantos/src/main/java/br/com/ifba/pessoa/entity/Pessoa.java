@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package br.com.ifba.pessoa.entity;
-import br.com.ifba.Cliente.interfaces.Autenticavel;
+import br.com.ifba.cliente.interfaces.Autenticavel;
+
 
 /**
  *
@@ -12,7 +13,7 @@ import br.com.ifba.Cliente.interfaces.Autenticavel;
 public class Pessoa {
     private String nome;
     private String cpf;
-    private String genero;
+    private GeneroPessoa genero;
     private String dataNascimento;
     private String telefone;
     private String email;
@@ -39,7 +40,7 @@ public class Pessoa {
         return cpf;
     }   
 
-    public String getGenero() {
+    public GeneroPessoa getGenero() {
         return genero;
     }
 
@@ -71,7 +72,7 @@ public class Pessoa {
         this.cpf = cpf;
     }
 
-    public void setGenero(String genero) {
+    public void setGenero(GeneroPessoa genero) {
         this.genero = genero;
     }
 

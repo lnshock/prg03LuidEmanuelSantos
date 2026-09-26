@@ -4,10 +4,11 @@
  */
 package br.com.ifba.login.view;
 import javax.swing.JOptionPane;
-import br.com.ifba.usuario.validar.ValidarCliente;
+import br.com.ifba.pessoa.validar.ValidarPessoa;
 import br.com.ifba.cliente.entity.Cliente;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import br.com.ifba.pessoa.entity.GeneroPessoa;
 
 
 /**
@@ -200,30 +201,31 @@ public class TelaDeCadastro extends javax.swing.JFrame {
         String nome = txtNomeCompleto.getText();
         String telefone = txtTelefone.getText();
         String login = txtLogin.getText();
-        String genero = txtGenero.getText();
+        String textoDigitado = txtGenero.getText().toUpperCase().trim(); // toUpperCase evita problemas com maiúsculas/minúsculas
+        GeneroPessoa genero = GeneroPessoa.valueOf(textoDigitado);
         String email = txtEmail.getText();
         String cpf = txtCpf.getText();
         String dataNascimento = spnDataDeNascimento.toString();
         String senha = txtSenha.getText();
         String confirmarSenha = txtConfirmaSenha.getText();
         //Pegando todas os dados informados na tela de cadastro
-        ValidarCliente.cpfComLetra(cpf);//Verificando se há letra no cpf informado      
-        ValidarCliente.senhaNumCaracteres(senha);//Verificando se o num de caracteres é maior que 8
+        ValidarPessoa.cpfComLetra(cpf);//Verificando se há letra no cpf informado      
+        ValidarPessoa.senhaNumCaracteres(senha);//Verificando se o num de caracteres é maior que 8
         
-         if(ValidarCliente.campoVazio(nome, telefone, login, genero, email, cpf, dataNascimento, senha, confirmarSenha)){
+         if(ValidarPessoa.campoVazio(nome, telefone, login, genero, email, cpf, dataNascimento, senha, confirmarSenha)){
              JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Campos vazios", JOptionPane.ERROR_MESSAGE);
            //Verificando se há campos vazios e mostrnado mensagem de erro, caso haja campos vazios    
           } else{
-             if (ValidarCliente.cpfComLetra(cpf)){
+             if (ValidarPessoa.cpfComLetra(cpf)){
              JOptionPane.showMessageDialog(null, "Cpf deve conter apenas números", "Erro", JOptionPane.ERROR_MESSAGE);
              }
              else{
-              if (ValidarCliente.senhaNumCaracteres(senha)){
+              if (ValidarPessoa.senhaNumCaracteres(senha)){
               JOptionPane.showMessageDialog(null, "A senha deve conter no minimo 8 caracteres", "Erro", JOptionPane.ERROR_MESSAGE);
               } 
                else{
              //Verifica se a palavra no campo login é uma das palavras proibidas
-           if (ValidarCliente.contemPalavraProibida(login)){
+           if (ValidarPessoa.contemPalavraProibida(login)){
                 //Mostra uma mensagem de erro se for uma palavra proibida
                   JOptionPane.showMessageDialog(null, "Login contem palavra nao permitida", "Erro",
                   JOptionPane.ERROR_MESSAGE);
