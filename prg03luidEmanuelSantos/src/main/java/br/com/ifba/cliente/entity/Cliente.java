@@ -5,7 +5,8 @@
 package br.com.ifba.cliente.entity;
 
 
-import br.com.ifba.Cliente.interfaces.Autenticavel;
+import br.com.ifba.cliente.interfaces.Autenticavel;
+import br.com.ifba.pessoa.entity.GeneroPessoa;
 import br.com.ifba.pessoa.entity.Pessoa;
 
 /**
@@ -24,6 +25,7 @@ public class Cliente extends Pessoa implements Autenticavel {
         setCpf(cpf);
         setLogin(login);
         setSenha(senha);
+       
     }
 
    

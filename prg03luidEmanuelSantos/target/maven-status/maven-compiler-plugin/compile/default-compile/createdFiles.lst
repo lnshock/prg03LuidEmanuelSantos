@@ -1,7 +1,10 @@
 br\com\ifba\login\view\TelaDeCadastro.class
+br\com\ifba\pessoa\entity\GeneroPessoa.class
+br\com\ifba\livro\entity\Livro.class
 br\com\ifba\login\view\TelaDeLogin.class
+br\com\ifba\pessoa\validar\ValidarPessoa.class
 br\com\ifba\cliente\entity\Cliente.class
+br\com\ifba\compra\entity\Compra.class
 br\com\ifba\login\view\TelaDeLogin$1.class
 br\com\ifba\cliente\interfaces\Autenticavel.class
-br\com\ifba\usuario\validar\ValidarCliente.class
 br\com\ifba\pessoa\entity\Pessoa.class
