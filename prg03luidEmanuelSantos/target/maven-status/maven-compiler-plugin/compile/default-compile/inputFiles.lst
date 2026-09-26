@@ -1,5 +1,6 @@
+C:\Users\luids\OneDrive\Documentos\prg03LuidEmanuelSantosDosAnjos\prg03luidEmanuelSantos\src\main\java\br\com\ifba\cliente\entity\Cliente.java
+C:\Users\luids\OneDrive\Documentos\prg03LuidEmanuelSantosDosAnjos\prg03luidEmanuelSantos\src\main\java\br\com\ifba\cliente\interfaces\Autenticavel.java
 C:\Users\luids\OneDrive\Documentos\prg03LuidEmanuelSantosDosAnjos\prg03luidEmanuelSantos\src\main\java\br\com\ifba\login\view\TelaDeCadastro.java
 C:\Users\luids\OneDrive\Documentos\prg03LuidEmanuelSantosDosAnjos\prg03luidEmanuelSantos\src\main\java\br\com\ifba\login\view\TelaDeLogin.java
-C:\Users\luids\OneDrive\Documentos\prg03LuidEmanuelSantosDosAnjos\prg03luidEmanuelSantos\src\main\java\br\com\ifba\usuario\entity\Usuario.java
-C:\Users\luids\OneDrive\Documentos\prg03LuidEmanuelSantosDosAnjos\prg03luidEmanuelSantos\src\main\java\br\com\ifba\usuario\interfaces\Autenticavel.java
-C:\Users\luids\OneDrive\Documentos\prg03LuidEmanuelSantosDosAnjos\prg03luidEmanuelSantos\src\main\java\br\com\ifba\usuario\validar\ValidarUsuario.java
+C:\Users\luids\OneDrive\Documentos\prg03LuidEmanuelSantosDosAnjos\prg03luidEmanuelSantos\src\main\java\br\com\ifba\pessoa\entity\Pessoa.java
+C:\Users\luids\OneDrive\Documentos\prg03LuidEmanuelSantosDosAnjos\prg03luidEmanuelSantos\src\main\java\br\com\ifba\usuario\validar\ValidarCliente.java

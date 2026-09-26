@@ -3,13 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package br.com.ifba.usuario.validar;
-import javax.swing.JOptionPane;
+
 
 /**
  *
  * @author luids
  */
-public class ValidarUsuario {
+public class ValidarCliente {
    
     public static boolean contemPalavraProibida(String texto){
        //Cria o array com as palavras proibidas
