@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package br.com.ifba.login.view;
-import br.com.ifba.usuario.entity.Usuario;
+import br.com.ifba.cliente.entity.Cliente;
 import javax.swing.JOptionPane;
 
 /**
@@ -151,7 +151,7 @@ public class TelaDeLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-      Usuario usuario = new Usuario();
+      Cliente usuario = new Cliente();
       //Criando login e senha de exemplo
       usuario.setLogin("Luid"); 
       usuario.setSenha("senha123");

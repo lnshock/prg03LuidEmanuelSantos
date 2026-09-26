@@ -2,17 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package br.com.ifba.usuario.entity;
-
-
-import br.com.ifba.usuario.interfaces.Autenticavel;
+package br.com.ifba.pessoa.entity;
+import br.com.ifba.Cliente.interfaces.Autenticavel;
 
 /**
  *
  * @author luids
  */
-public class Usuario implements Autenticavel{
-      
+public class Pessoa {
     private String nome;
     private String cpf;
     private String genero;
@@ -22,20 +19,7 @@ public class Usuario implements Autenticavel{
     private String login;
     private String senha;
     
-
-    //Construtor sem parametros
-    public Usuario() {
-    }
-    //Construtor com parametros
-    public Usuario(String nome, String cpf, String login, String senha) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.login = login;
-        this.senha = senha;
-    }
     
-        @Override
-        
     public boolean autenticar(String login, String senha) {
         
        if(this.login.equals(login) && this.senha.equals(senha)){
@@ -112,5 +96,4 @@ public class Usuario implements Autenticavel{
     }
 
 
-    
 }

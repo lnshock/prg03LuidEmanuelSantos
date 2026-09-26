@@ -7,17 +7,17 @@
  *
  * @author luids
  */
-import br.com.ifba.usuario.entity.Usuario;
+import br.com.ifba.cliente.entity.Cliente;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 
-public class UsuarioTest {
+public class ClienteTest {
     @Test
     public void deveAutenticarQuandoCredenciaisCorretas(){
         //Arrange
-        Usuario usuario = new Usuario("Luid", "12345678", "login123", "senha123");
+        Cliente usuario = new Cliente("Luid", "12345678", "login123", "senha123");
  
         //Act
         boolean resultado = usuario.autenticar("login123", "senha123");
@@ -29,7 +29,7 @@ public class UsuarioTest {
     @Test
     public void naoDeveAutenticarQuandoCredenciaisIncorretas(){
         //Arrange
-        Usuario usuario = new Usuario("Luid", "12345678", "login123", "senha123");
+        Cliente usuario = new Cliente("Luid", "12345678", "login123", "senha123");
  
         //Act
         boolean resultado = usuario.autenticar("login123", "senhaErrada");

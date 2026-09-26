@@ -1,6 +1,7 @@
-br\com\ifba\login\view\TelaDeLogin$1.class
-br\com\ifba\usuario\validar\ValidarUsuario.class
 br\com\ifba\login\view\TelaDeCadastro.class
-br\com\ifba\usuario\entity\Usuario.class
-br\com\ifba\usuario\interfaces\Autenticavel.class
 br\com\ifba\login\view\TelaDeLogin.class
+br\com\ifba\cliente\entity\Cliente.class
+br\com\ifba\login\view\TelaDeLogin$1.class
+br\com\ifba\cliente\interfaces\Autenticavel.class
+br\com\ifba\usuario\validar\ValidarCliente.class
+br\com\ifba\pessoa\entity\Pessoa.class
