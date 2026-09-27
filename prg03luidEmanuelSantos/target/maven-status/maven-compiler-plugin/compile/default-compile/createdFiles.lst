@@ -1,5 +1,6 @@
 br\com\ifba\login\view\TelaDeCadastro.class
 br\com\ifba\pessoa\entity\GeneroPessoa.class
+br\com\ifba\funcionario\entity\Funcionario.class
 br\com\ifba\livro\entity\Livro.class
 br\com\ifba\login\view\TelaDeLogin.class
 br\com\ifba\pessoa\validar\ValidarPessoa.class

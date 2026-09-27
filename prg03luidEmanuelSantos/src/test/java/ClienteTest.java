@@ -8,6 +8,8 @@
  * @author luids
  */
 import br.com.ifba.cliente.entity.Cliente;
+import br.com.ifba.compra.entity.Compra;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -38,5 +40,29 @@ public class ClienteTest {
         assertFalse(resultado);
     }
     
-    
+   @Test
+    public void deveRetornarTextoComZeroComprasQuandoListaEstiverVazia(){
+        //Arrange
+        Cliente usuario = new Cliente("Luid", "12345678", "login123", "senha123");
+
+        //Act
+        String resultado = usuario.numeroDeTrasacoes();
+
+        //Assert
+        assertEquals("Numero de compras realizadas: 0", resultado);
+    }
+
+    @Test
+    public void deveRetornarTextoComQuantidadeCorretaDeCompras(){
+        //Arrange
+        Cliente usuario = new Cliente("Luid", "12345678", "login123", "senha123");
+        usuario.getTransacoesFeitas().add(new Compra());
+        usuario.getTransacoesFeitas().add(new Compra());
+
+        //Act
+        String resultado = usuario.numeroDeTrasacoes();
+
+        //Assert
+        assertEquals("Numero de compras realizadas: 2", resultado);
+    }
 }
