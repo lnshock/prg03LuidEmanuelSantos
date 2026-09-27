@@ -1,33 +1,38 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package br.com.ifba.cliente.entity;
+    /*
+     * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+     * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+     */
+    package br.com.ifba.cliente.entity;
 
 
-import br.com.ifba.cliente.interfaces.Autenticavel;
-import br.com.ifba.pessoa.entity.GeneroPessoa;
-import br.com.ifba.pessoa.entity.Pessoa;
+    import br.com.ifba.cliente.interfaces.Autenticavel;
+    import br.com.ifba.pessoa.entity.GeneroPessoa;
+    import br.com.ifba.pessoa.entity.Pessoa;
 
-/**
- *
- * @author luids
- */
-public class Cliente extends Pessoa implements Autenticavel {
-      
-  
-     //Construtor sem parametros
-    public Cliente() {
+    /**
+     *
+     * @author luids
+     */
+    public class Cliente extends Pessoa implements Autenticavel {
+
+
+
+         //Construtor sem parametros
+        public Cliente() {
+        }
+        //Construtor com parametros
+          public Cliente(String nome, String cpf, String login, String senha) {
+            setNome(nome);
+            setCpf(cpf);
+            setLogin(login);
+            setSenha(senha);
+
+        }
+         //Modificando a classe herdada de acordo com a necessidade da classe filha
+        @Override
+        public String numeroDeTrasacoes(){
+             return ("Numero de compras realizadas: "+ transacoesFeitas.size() );
+        }
+
+
     }
-    //Construtor com parametros
-      public Cliente(String nome, String cpf, String login, String senha) {
-        setNome(nome);
-        setCpf(cpf);
-        setLogin(login);
-        setSenha(senha);
-       
-    }
-
-   
-    
-}

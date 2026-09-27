@@ -4,13 +4,16 @@
  */
 package br.com.ifba.pessoa.entity;
 import br.com.ifba.cliente.interfaces.Autenticavel;
+import br.com.ifba.compra.entity.Compra;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
  *
  * @author luids
  */
-public class Pessoa {
+public abstract class Pessoa {
     private String nome;
     private String cpf;
     private GeneroPessoa genero;
@@ -19,6 +22,7 @@ public class Pessoa {
     private String email;
     private String login;
     private String senha;
+    protected List <Compra> transacoesFeitas = new ArrayList<>();
     
     
     public boolean autenticar(String login, String senha) {
@@ -30,7 +34,10 @@ public class Pessoa {
            return false;
        }
     }
-    
+    public  String numeroDeTrasacoes(){
+        return ("Numero de transacoes feitas: "+ transacoesFeitas.size() );
+    }
+  
     //Metodos acessores getters e setters
     public String getNome() {
         return nome;
@@ -95,6 +102,15 @@ public class Pessoa {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+    public List<Compra> getTransacoesFeitas() {
+    return transacoesFeitas;
+}
+
+public void setTransacoesFeitas(List<Compra> transacoesFeitas) {
+    this.transacoesFeitas = transacoesFeitas;
+}
+
+  
 
 
 }
