@@ -33,6 +33,14 @@
         public String numeroDeTrasacoes(){
              return ("Numero de compras realizadas: "+ transacoesFeitas.size() );
         }
+          @Override
+          public String autenticar(String login, String senha) {
+          return "Cliente autenticado: " + login;
+        }
+        @Override
+        public  String processar(Autenticavel pessoa, String login, String senha){
+           return "Cliente: " + login;
+    }
 
 
     }

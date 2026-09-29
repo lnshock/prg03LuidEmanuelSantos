@@ -25,15 +25,11 @@ public abstract class Pessoa {
     protected List <Compra> transacoesFeitas = new ArrayList<>();
     
     
-    public boolean autenticar(String login, String senha) {
+    public String autenticar(String login, String senha) {
         
-       if(this.login.equals(login) && this.senha.equals(senha)){
-           return true;
-       }
-       else{
-           return false;
-       }
+        return "Bem vindo" + login;
     }
+   
     public  String numeroDeTrasacoes(){
         return ("Numero de transacoes feitas: "+ transacoesFeitas.size() );
     }
