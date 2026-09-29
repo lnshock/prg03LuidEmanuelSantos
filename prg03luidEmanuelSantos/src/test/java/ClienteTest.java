@@ -1,68 +1,33 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+package br.com.ifba.cliente.entity;
+
+import br.com.ifba.cliente.interfaces.Autenticavel;
+import br.com.ifba.compra.entity.Compra;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 /**
  *
  * @author luids
  */
-import br.com.ifba.cliente.entity.Cliente;
-import br.com.ifba.compra.entity.Compra;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-
-
 public class ClienteTest {
-    @Test
-    public void deveAutenticarQuandoCredenciaisCorretas(){
-        //Arrange
-        Cliente usuario = new Cliente("Luid", "12345678", "login123", "senha123");
- 
-        //Act
-        boolean resultado = usuario.autenticar("login123", "senha123");
- 
-        //Assert
-        assertTrue(resultado);
-    }
- 
-    @Test
-    public void naoDeveAutenticarQuandoCredenciaisIncorretas(){
-        //Arrange
-        Cliente usuario = new Cliente("Luid", "12345678", "login123", "senha123");
- 
-        //Act
-        boolean resultado = usuario.autenticar("login123", "senhaErrada");
- 
-        //Assert
-        assertFalse(resultado);
-    }
-    
-   @Test
-    public void deveRetornarTextoComZeroComprasQuandoListaEstiverVazia(){
-        //Arrange
-        Cliente usuario = new Cliente("Luid", "12345678", "login123", "senha123");
 
-        //Act
-        String resultado = usuario.numeroDeTrasacoes();
-
-        //Assert
-        assertEquals("Numero de compras realizadas: 0", resultado);
+    @Test
+    void clienteAutenticaPeloProprioCanal() {
+        Autenticavel pessoa = new Cliente("Luid", "12345678", "login123", "senha123"); // tipo geral à esquerda
+        assertEquals("Cliente autenticado: login123", pessoa.autenticar("login123", "senha123"));
     }
 
     @Test
-    public void deveRetornarTextoComQuantidadeCorretaDeCompras(){
-        //Arrange
+    void deveRetornarTextoComZeroComprasQuandoListaEstiverVazia() {
+        Cliente usuario = new Cliente("Luid", "12345678", "login123", "senha123");
+        assertEquals("Numero de compras realizadas: 0", usuario.numeroDeTrasacoes());
+    }
+
+    @Test
+    void deveRetornarTextoComQuantidadeCorretaDeCompras() {
         Cliente usuario = new Cliente("Luid", "12345678", "login123", "senha123");
         usuario.getTransacoesFeitas().add(new Compra());
         usuario.getTransacoesFeitas().add(new Compra());
-
-        //Act
-        String resultado = usuario.numeroDeTrasacoes();
-
-        //Assert
-        assertEquals("Numero de compras realizadas: 2", resultado);
+        assertEquals("Numero de compras realizadas: 2", usuario.numeroDeTrasacoes());
     }
 }

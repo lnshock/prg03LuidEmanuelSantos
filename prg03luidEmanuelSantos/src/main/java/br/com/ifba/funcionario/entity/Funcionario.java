@@ -17,6 +17,16 @@ public class Funcionario extends Pessoa implements Autenticavel{
     public  String numeroDeTrasacoes(){
          return ("Numero de livros vendidos: "+ transacoesFeitas.size() );
     }
+
+    @Override
+    public String autenticar(String login, String senha) {
+        return "funcionario " + login;
+    }
+    
+    @Override
+    public String processar(Autenticavel pessoa, String login, String senha){
+           return "Funcionario: " + login;
+    }
     
    
 }

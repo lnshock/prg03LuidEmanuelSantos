@@ -39,4 +39,5 @@ public class FuncionarioTest {
         //Assert
         assertEquals("Numero de livros vendidos: 2", resultado);
     }
+    
 }

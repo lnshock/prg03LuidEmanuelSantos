@@ -4,6 +4,7 @@
  */
 package br.com.ifba.login.view;
 import br.com.ifba.cliente.entity.Cliente;
+import br.com.ifba.funcionario.entity.Funcionario;
 import javax.swing.JOptionPane;
 
 /**
@@ -152,21 +153,21 @@ public class TelaDeLogin extends javax.swing.JFrame {
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
       Cliente usuario = new Cliente();
+      Funcionario usuario2 = new Funcionario();
       //Criando login e senha de exemplo
       usuario.setLogin("Luid"); 
       usuario.setSenha("senha123");
+      usuario2.setLogin("Lui"); 
+      usuario2.setSenha("senha12");
       String loginDigitado = txtLogin.getText();
-      String senhaDigitada = new String(txtSenha.getPassword());
+      String senhaDigitada = new String(txtSenha.getPassword());     
+      //Verificando se as saidas são diferentes, após aplicar poolimorfismo
+        System.out.println(usuario.autenticar(loginDigitado, senhaDigitada));  
+        System.out.println(usuario2.autenticar(loginDigitado, senhaDigitada));
         
-        //Compara se a senha e login digitados são compativeis com os exemplos
-        if (usuario.autenticar(loginDigitado, senhaDigitada)){
-         //se forem iguais, mensagem de sucesso   
-            JOptionPane.showMessageDialog(null, "Acesso liberado", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else{
-         //caso forem diferentes, mensagem de erro   
-            JOptionPane.showMessageDialog(null, "Acesso negado", "Erro", JOptionPane.ERROR_MESSAGE);
-        }
+      //Verifixando se as saidas são diferentes no metodo processar
+        System.out.println(usuario.processar(usuario2, loginDigitado, senhaDigitada));
+        System.out.println(usuario2.processar(usuario, loginDigitado, senhaDigitada));
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void lblCadastreseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCadastreseMouseClicked
