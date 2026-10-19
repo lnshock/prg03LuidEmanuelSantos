@@ -8,4 +8,5 @@ br\com\ifba\cliente\entity\Cliente.class
 br\com\ifba\compra\entity\Compra.class
 br\com\ifba\login\view\TelaDeLogin$1.class
 br\com\ifba\cliente\interfaces\Autenticavel.class
+br\com\ifba\pessoa\entity\RepositorioPessoaEmMemoria.class
 br\com\ifba\pessoa\entity\Pessoa.class

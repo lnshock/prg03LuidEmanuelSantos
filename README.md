@@ -1,1 +1,1 @@
-Construtor vazio e com os campos preenchidos foram criados para diferentes situações. É possível que o usuário não tenha todos os dados naquele momento, então usamos o vazio, caso tenha todos eles, usamos o construtor com os campos preenchidos
+Velocidade, o for vai olhar as informações de um por um, já o map vai direto na chave informada

@@ -6,14 +6,17 @@ package br.com.ifba.pessoa.entity;
 import br.com.ifba.cliente.interfaces.Autenticavel;
 import br.com.ifba.compra.entity.Compra;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 
 /**
  *
  * @author luids
  */
-public abstract class Pessoa {
+public abstract class Pessoa extends RepositorioPessoaEmMemoria{
     private String nome;
     private String cpf;
     private GeneroPessoa genero;
@@ -105,8 +108,19 @@ public abstract class Pessoa {
 public void setTransacoesFeitas(List<Compra> transacoesFeitas) {
     this.transacoesFeitas = transacoesFeitas;
 }
+   
+    @Override
+    public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
 
-  
+    Pessoa pessoa = (Pessoa) o;
 
+    return cpf != null ? cpf.equals(pessoa.cpf) : pessoa.cpf == null;
+    }
 
+    @Override
+    public int hashCode() {
+    return cpf != null ? cpf.hashCode() : 0;
+    }        
 }

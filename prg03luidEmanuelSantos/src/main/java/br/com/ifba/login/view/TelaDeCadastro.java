@@ -198,6 +198,7 @@ public class TelaDeCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+
         String nome = txtNomeCompleto.getText();
         String telefone = txtTelefone.getText();
         String login = txtLogin.getText();
@@ -216,7 +217,7 @@ public class TelaDeCadastro extends javax.swing.JFrame {
              JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Campos vazios", JOptionPane.ERROR_MESSAGE);
            //Verificando se há campos vazios e mostrnado mensagem de erro, caso haja campos vazios    
           } else{
-             if (ValidarPessoa.cpfComLetra(cpf)){
+             if (!ValidarPessoa.cpfComLetra(cpf)){
              JOptionPane.showMessageDialog(null, "Cpf deve conter apenas números", "Erro", JOptionPane.ERROR_MESSAGE);
              }
              else{
@@ -255,6 +256,8 @@ public class TelaDeCadastro extends javax.swing.JFrame {
                    usuario.setNome(nome);
                    usuario.setSenha(senha);
                    usuario.setTelefone(telefone);
+                   usuario.cadastrar(usuario);
+                   
                   JOptionPane.showMessageDialog(null, "Nome:" + usuario.getNome() + " cpf: "+ usuario.getCpf()+ 
                   " Login: "+ usuario.getLogin() + " Senha: " + usuario.getSenha(),"Sucesso", JOptionPane.INFORMATION_MESSAGE);
                      dispose();
