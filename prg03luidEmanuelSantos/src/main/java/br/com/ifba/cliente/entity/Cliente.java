@@ -19,6 +19,7 @@
 
          //Construtor sem parametros
         public Cliente() {
+            
         }
         //Construtor com parametros
           public Cliente(String nome, String cpf, String login, String senha) {
@@ -40,7 +41,9 @@
         @Override
         public  String processar(Autenticavel pessoa, String login, String senha){
            return "Cliente: " + login;
-    }
+        }
+        
+ 
 
 
     }
